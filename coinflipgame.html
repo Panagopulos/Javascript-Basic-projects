@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Booleans</title>
+  </head>
+      <body>
+        <button onclick="
+          playGame('tails');
+          
+        ">Tails</button>
+
+        <button onclick="
+          playGame('heads')
+
+        ">Heads</button>
+
+        <button onclick="
+        score.wins = 0;
+        score.losses = 0;
+        ">Reset Score</button>
+
+        
+
+        <script>
+
+            let score = JSON.parse(localStorage.getItem('score')) ||{
+              wins: 0,
+              losses: 0
+            };
+
+          function playGame(guess) {
+            const computerMove = pickComputerMove();
+            let result = '';
+
+            
+
+            result = guess === computerMove ? 'You Win' : 'You lost';
+
+            if(result === 'You Win') {
+              score.wins += 1;
+            } else {
+              score.losses +=1;
+            }
+
+            localStorage.setItem('score',JSON.stringify(score));
+
+            alert(`You choosed ${guess} and coin fliped to ${computerMove} you ${result},Wins: ${score.wins} Losses: ${score.losses}!`);
+
+          }
+
+          function pickComputerMove() {
+
+          const randomNumber = Math.random();
+
+          const computerMove = randomNumber <= 0.5 ? 'heads' : 'tails';
+
+          return computerMove;
+
+          }
+
+          
+
+        </script>
+      </body>
+  </html>

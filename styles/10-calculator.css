@@ -1,0 +1,37 @@
+.calculation {
+  color: white;
+  font-size: 45px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-family: Arial;
+}
+
+.grey-buttons {
+  background-color: rgb(66, 66, 66);
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  margin-right: 5px;
+  color: white;
+
+}
+
+.special-buttons {
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  margin-right: 5px;
+  color: white;
+  background-color: orange;
+}
+
+.body {
+  background-color: black;
+  margin: 30px;
+}

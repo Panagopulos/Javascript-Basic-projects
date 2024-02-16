@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Practice</title>
+  </head>
+      <body>
+        <h1>Super Interesting button</h1>
+        <button id="clickButton">Click Me!</button>
+        <div id="js-counter">0</div>
+
+          <script>
+            const button = document.getElementById('clickButton');
+            const counterText = document.getElementById('js-counter');
+
+            let counter = 0
+            const updateCounter = () => {
+              counterText.innerHTML = counter;
+              if(counter >= 10) {
+                counter = 0;
+              }
+            }
+
+            button.addEventListener('click',() => {
+              counter++
+
+              updateCounter();
+            })
+
+
+
+
+          /*
+          const remove = (array,word) => {
+            let eggs = 0;
+            return array.filter((value) => {
+              if(value === word) {
+                eggs++
+                return eggs > 2 
+              } else { return true}
+            })
+
+
+          }
+          
+          const array = ['egg', 'jam', 'tomato','egg','paprika', 'egg', 'egg'];
+          console.log(remove(array,'egg'));
+          */
+
+          </script>
+      </body>
+  </html>
+
+
+  

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+  <head>
+    <title>Buttons</title>
+    <style>
+      .gaming-button {
+        background-color: black;
+        border: none;
+        border-radius: 15px;
+        color: white;
+        padding: 12px 15px;
+        cursor: pointer;
+      }
+
+      .js-toggled{
+        background-color: grey;
+        border: none;
+        border-radius: 15px;
+        color: black;
+        padding: 12px 15px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+
+    <button onclick="
+      turnOnOf('.js-gaming-button');
+      " class="js-gaming-button gaming-button"
+    >Gaming</button>
+
+    <button onclick=" 
+    turnOnOf('.js-music-button');
+    " class="js-music-button gaming-button"
+    >Music</button>
+
+    <button onclick="
+    turnOnOf('.js-tech-button')
+    " class="js-tech-button gaming-button">
+    Tech</button>
+    
+
+    <script>
+      function turnOnOf(value) {
+        const buttonElement = document.querySelector(value)
+        if(!buttonElement.classList.contains('js-toggled')) {
+
+          turnOffpreviousButton();
+
+          buttonElement.classList.add('js-toggled');
+        } else {
+          buttonElement.classList.remove('js-toggled');
+        }
+
+      }
+
+      function turnOffpreviousButton() {
+        const previousButton = document.querySelector('.js-toggled');
+        if(previousButton) {
+          previousButton.classList.remove('js-toggled');
+        }
+
+      }
+
+
+    </script>    
+  </body>
+</html>
